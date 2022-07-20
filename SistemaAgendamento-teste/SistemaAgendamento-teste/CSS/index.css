@@ -1,0 +1,200 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: border-box;
+    scroll-behavior: smooth;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 10vh 110vh 100vh 30vh;
+    grid-template-areas: "h h h h"
+                         "c1 c1 c2 c2"
+                         "m m m m"
+                         "f f f f";
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*--------------------------------------------------
+---HEADER-------------------------------------------
+----------------------------------------------------*/
+header {
+    background-color: #fff;
+    grid-area: h;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.img {
+    width: 55px;
+    height: 55px;
+    background-image: linear-gradient(to bottom right, rgb(22, 86, 144) 20%, rgb(0, 0, 0) 95%);
+    margin: 15px;
+}
+.nav {
+    display: flex;
+    align-items: center;
+}
+.nav hr {
+    width: 1px;
+    height: 30px;
+    background-color: #000;
+}
+.nav .nav-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 550;
+    margin: 5px;
+    border-radius: 20px;
+    padding: 7px 12px;
+    transition: 0.3s;
+    border: none;
+    background-color: #fff;
+}
+.nav .nav-btn:hover {
+    cursor: pointer;
+    color: rgba(22, 86, 144, 1);
+}
+.nav .nav-btn:active {
+    background-color: rgb(243, 243, 243);
+}
+.user {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    margin: 15px;
+}
+/*----------------------------------------------------
+---CONTAINER 1-----------------------------------------
+----------------------------------------------------*/
+.container-1 {
+    grid-area: c1;
+    
+}
+.container-1 .content {
+    width: 50%;
+    height: auto;
+    position: relative;
+    margin-top: 40%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    display: block;
+    text-align: center;
+}
+.container-1 h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 45px;
+    margin: 3vh;
+}
+.container-1 p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 3vh;
+}
+/*----------------------------------------------------
+---BOTÃO----------------------------------------------
+----------------------------------------------------*/
+.btn {
+    width: 12vw;
+    height: 4.5vh;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0.2vh 0.2vw 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(22, 86, 144, 1);
+    color: #fff;
+    font-family: 'Questrial', sans-serif;
+    font-size: 2.5vh;
+    font-weight: bold;
+    letter-spacing: 0.1vh;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.btn:hover {
+    background-color: #fff;
+    color: rgba(22, 86, 144, 1);
+}
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+/*----------------------------------------------------
+---CONTAINER 2----------------------------------------
+----------------------------------------------------*/
+.container-2 {
+    grid-area: c2;
+    position: relative;
+}
+.container-2 .grid {
+    width: 70%;
+    height: auto;
+    position: absolute;
+    margin-top: 40%;
+    left: 45%;
+    transform: translate(-50%, -40%);
+    display: flex;
+}
+.container-2 .banner {
+    width: 15vh;
+    height: 61.2vh;
+    border-radius: 30px;
+    background-image: linear-gradient(rgb(0, 0, 0) 20%, rgb(22, 86, 144) 60%);
+    margin: 1vh;
+    position: relative;
+    box-shadow: 0.4vh 0.4vh 10px rgba(0, 0, 0, 0.5);
+}
+.container-2 .img2, .container-2 .img4 {
+    margin-top: 7vh;
+}
+/*----------------------------------------------------
+---MAIN-----------------------------------------------
+----------------------------------------------------*/
+
+.custom-shape-divider-bottom-1657897361 {
+    position: relative;
+    bottom: 350px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1657897361 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 350px;
+}
+
+.custom-shape-divider-bottom-1657897361 .shape-fill {
+    fill: #000;
+}
+
+
+.main {
+    background-color: #e6e6e6;
+    grid-area: m;
+}
+
+
+/*----------------------------------------------------
+---FOOTER---------------------------------------------
+----------------------------------------------------*/
+
+footer {
+    background-color: rgb(0, 0, 0);
+    grid-area: f;
+}
