@@ -148,7 +148,6 @@ $pdo = conectar();
 </body>
 </html>
 <?php
-//Conexao do banco de dados
 
 //CADASTRO DO FORMULARIO
 
