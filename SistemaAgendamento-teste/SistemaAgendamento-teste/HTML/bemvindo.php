@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if(!isset($_SESSION["email"])){
+    header("location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> BEM VINDO VOCE CONSEGUIU</h1>
+    <h1> BEM VINDO VOCE CONSEGUIU <?php echo $_SESSION['email']; ?></h1>
 </body>
 </html>

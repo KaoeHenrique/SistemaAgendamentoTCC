@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once "conexao.php";
+$pdo = conectar();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -79,7 +81,7 @@ session_start();
                             </label>
                             <button type="submit" name="btnSalvar" class="btn btn-primary">Enviar</button>
                         </form>
-                        <button type="submit" class="btn btn-principal" name="btnSalvar" onclick="alterModal('login-js', 'register-js')">cadastrar</button>
+                        <!--<button type="submit" class="btn btn-principal" name="btnSalvar" onclick="alterModal('login-js', 'register-js')">cadastrar</button>-->
                     </div>
                 </div>
                 <div class="modal-content modal-login">
@@ -91,18 +93,18 @@ session_start();
                     <div class="second-content">
                         <h2>Entrar</h2>
                         <p>Utilizar seus dados já cadastrados</p>
-                        <form method="POST" action="">
+                        <form method="POST" action="bemvindo.php">
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-at icon-input"></i>
                                 <input type="email" name="email" placeholder="  Seu email">
                             </label>
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-key icon-input"></i>
-                                <input type="senha" name="senha" placeholder="  Sua senha">
-                                <button type="submit"> Entrar </button>
+                                <input type="password" name="senha" placeholder="  Sua senha">
+                                <button type="submit" name="BtnEntrar"> Entrar </button>
                             </label>
                         </form>
-                        <button class="btn" onclick="alterModal('service-js', 'login-js')">logar</button>
+                        <!--<button class="btn" onclick="alterModal('service-js', 'login-js')">logar</button>!-->
                     </div>
                 </div>
                 <div class="modal-content modal-service">
@@ -147,11 +149,10 @@ session_start();
 </html>
 <?php
 //Conexao do banco de dados
-require_once "conexao.php";
-$pdo = conectar();
-//CADASTRO DO FORMULARIO
-if (isset($_POST['btnSalvar'])) {
 
+//CADASTRO DO FORMULARIO
+
+     if(isset($_POST['btnSalvar'])) {
     $nome = isset($_POST['nome'])? $_POST['nome'] : null;
     $telefone = isset($_POST['telefone'])? $_POST['telefone'] : null;
     $email = isset($_POST['email'])? $_POST['email'] : null;
@@ -159,10 +160,10 @@ if (isset($_POST['btnSalvar'])) {
     $datanasc = isset($_POST['datanasc'])? $_POST['datanasc'] : null;
     $endereco = isset($_POST['endereco'])? $_POST['endereco'] : null;
 
-    $sql = "INSERT INTO cliente (nome_cliente, telefone_cliente, email_cliente, senha_cliente, data_nasc, endereco_cliente) VALUES (:n, :t, :e, :s, :d, :en);";
-    // preparando o sql para receber os dados
+   $sql = "INSERT INTO cliente (nome_cliente, telefone_cliente, email_cliente, senha_cliente, data_nasc, endereco_cliente) VALUES (:n, :t, :e, :s, :d, :en);";
+     //preparando o sql para receber os dados
     $stmt = $pdo->prepare($sql);
-    // troca dos dados pelo que esta vindo no formulário
+     //troca dos dados pelo que esta vindo no formulário
     $stmt->bindParam(':n', $nome);
     $stmt->bindParam(':t', $telefone);
     $stmt->bindParam(':e', $email);
@@ -172,6 +173,22 @@ if (isset($_POST['btnSalvar'])) {
     if ($stmt->execute()) {
         echo "Registro inserido com sucesso";
     }
+     }
+?>
+<?php
+//TENTATIVA DE LOGIN
+if(isset($_POST["BtnEntrar"])){
+    if($_POST[$email]=="" or $_POST[$senha]==""){
+        echo "PORFAVOR DIGITE SEUS DADOS";
+    } else{
+        $query=$pdo->prepare("SELECT * FROM cliente WHERE email_cliente=? AND senha_cliente=?");
+        $query->execute(array($email,$senha));
+        $control=$query->fetch(PDO::FETCH_OBJ);
+        if($control>0){
+            $_SESSION["email"]=$email;
+            header("Location:bemvindo.php");
+        }
+    }
 }
 ?>
-<?php>
+
