@@ -47,41 +47,41 @@ $pdo = conectar();
                     <div class="first-content">
                         <h2>Já Possuo Uma Conta</h2>
                         <p>Entrar utilizando seus dados já cadastrados</p>
-                        <button id="login" class="btn" onclick="alterModal('login-js', 'register-js')">entrar</button>
+                <button id="login" class="btn" onclick="alterModal('login-js', 'register-js')">entrar</button>
         
                     </div>
                     <div class="second-content">    
                         <h2>Criar Uma Conta</h2>
                         
                        <p>Preencha os campos para criar uma nova conta</p>
-                        <form method="POST">
+                             <form method="POST">
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-user icon-input"></i>
-                                <input type="text" name="nome" placeholder="  Seu nome">
+                                <input type="text" name="nome" placeholder="  Seu nome" required>
                             </label>
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-phone icon-input"></i>
-                                <input type="text" name="telefone" placeholder="  Número para contato">
+                                <input type="text" name="telefone" placeholder="  Número para contato"required>
                             </label>
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-at icon-input"></i>
-                                <input type="email" name="email" placeholder="  Email para contato">
+                                <input type="email" name="email" placeholder="  Email para contato"required>
                             </label>
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-key icon-input"></i>
-                                <input type="password" name="senha" placeholder="  Definir senha">
+                                <input type="password" name="senha" placeholder="  Definir senha"required>
                             </label>
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-calendar-days icon-input"></i>
-                                <input type="date" name="datanasc" placeholder="  Data de nascimento">
+                                <input type="date" name="datanasc" placeholder="  Data de nascimento"required>
                             </label>
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-map-location icon-input"></i>
-                                <input type="text" name="endereco" placeholder="  Endereço">
+                                <input type="text" name="endereco" placeholder="  Endereço"required>
                             </label>
                             <button type="submit" name="btnSalvar" class="btn btn-primary">Enviar</button>
                         </form>
-                        <!--<button type="submit" class="btn btn-principal" name="btnSalvar" onclick="alterModal('login-js', 'register-js')">cadastrar</button>-->
+                       <button type="submit" class="btn btn-principal" name="btnSalvar" onclick="alterModal('login-js', 'register-js')">cadastrar</button>
                     </div>
                 </div>
                 <div class="modal-content modal-login">
@@ -93,23 +93,25 @@ $pdo = conectar();
                     <div class="second-content">
                         <h2>Entrar</h2>
                         <p>Utilizar seus dados já cadastrados</p>
-                        <form method="POST" action="bemvindo.php">
+                        <form method="POST">
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-at icon-input"></i>
-                                <input type="email" name="email" placeholder="  Seu email">
+                                <input type="email" name="usuario" placeholder="  Seu email">
                             </label>
                             <label class="label-input"for="">
                                 <i class="fa-solid fa-key icon-input"></i>
-                                <input type="password" name="senha" placeholder="  Sua senha">
-                                <button type="submit" name="BtnEntrar"> Entrar </button>
+                                <input type="password" name="senhaa" placeholder="  Sua senha">
+                                
                             </label>
+                            <button class="btn btn-primary" type="submit" name="BtnEntrar"> Entrar </button>
                         </form>
-                        <!--<button class="btn" onclick="alterModal('service-js', 'login-js')">logar</button>!-->
+                        
+                        <!--<button class="btn" onclick="alterModal('service-js', 'login-js')">logar</button>-->
                     </div>
                 </div>
                 <div class="modal-content modal-service">
                     <div class="first-content">
-                        <button onclick="alterModal('login-js', 'service-js')"><i class="fa-solid fa-arrow-left-long fa-2xl arrow"></i> <h3>voltar</h3></button>
+                       <button onclick="alterModal('login-js', 'service-js')"><i class="fa-solid fa-arrow-left-long fa-2xl arrow"></i> <h3>voltar</h3></button>
 
                         <h2>Profissionais</h2>
                     </div>
@@ -144,7 +146,48 @@ $pdo = conectar();
             
         </footer>
     </div>
-
+<div>
+<!--<form method="POST">
+                            <label class="label-input"for="">
+                                <i class="fa-solid fa-user icon-input"></i>
+                                <input type="text" name="nome" placeholder="  Seu nome">
+                            </label>
+                            <label class="label-input"for="">
+                                <i class="fa-solid fa-phone icon-input"></i>
+                                <input type="text" name="telefone" placeholder="  Número para contato">
+                            </label>
+                            <label class="label-input"for="">
+                                <i class="fa-solid fa-at icon-input"></i>
+                                <input type="email" name="email" placeholder="  Email para contato">
+                            </label>
+                            <label class="label-input"for="">
+                                <i class="fa-solid fa-key icon-input"></i>
+                                <input type="password" name="senha" placeholder="  Definir senha">
+                            </label>
+                            <label class="label-input"for="">
+                                <i class="fa-solid fa-calendar-days icon-input"></i>
+                                <input type="date" name="datanasc" placeholder="  Data de nascimento">
+                            </label>
+                            <label class="label-input"for="">
+                                <i class="fa-solid fa-map-location icon-input"></i>
+                                <input type="text" name="endereco" placeholder="  Endereço">
+                            </label>
+                            <button type="submit" name="btnSalvar" class="btn btn-primary">Enviar</button>
+</div>
+<br>-->
+<!--<div>
+                            <form method="POST">
+                            <label class="label-input"for="">
+                                <i class="fa-solid fa-at icon-input"></i>
+                                <input type="email" name="usuario" placeholder="  Seu email">
+                            </label>
+                            <label class="label-input"for="">
+                                <i class="fa-solid fa-key icon-input"></i>
+                                <input type="password" name="senhaa" placeholder="  Sua senha">
+                                <button type="submit" name="BtnEntrar"> Entrar </button>
+                            </label>
+                        </form>
+</div>-->
 </body>
 </html>
 <?php
@@ -173,21 +216,28 @@ $pdo = conectar();
         echo "Registro inserido com sucesso";
     }
      }
-?>
-<?php
-//TENTATIVA DE LOGIN
-if(isset($_POST["BtnEntrar"])){
-    if($_POST[$email]=="" or $_POST[$senha]==""){
-        echo "PORFAVOR DIGITE SEUS DADOS";
-    } else{
-        $query=$pdo->prepare("SELECT * FROM cliente WHERE email_cliente=? AND senha_cliente=?");
-        $query->execute(array($email,$senha));
-        $control=$query->fetch(PDO::FETCH_OBJ);
-        if($control>0){
-            $_SESSION["email"]=$email;
-            header("Location:bemvindo.php");
+//LOGIN FUNCIONAL 
+     if (isset($_POST['BtnEntrar'])) {
+        $usuario = isset($_POST['usuario']) ? $_POST['usuario'] : null;
+        $senhaa = isset($_POST['senhaa']) ? ($_POST['senhaa']) : null;
+    
+        if(empty($usuario) && empty($senhaa)){
+           echo "Necessário informar usuario e senha";
+         exit();
         }
-    }
+        
+       $sql2 = "SELECT email_cliente, senha_cliente, nome_cliente FROM cliente WHERE email_cliente = :u AND senha_cliente = :ss";
+    
+        $stmt2 = $pdo->prepare($sql2);
+        $stmt2->bindParam(':u', $usuario);
+        $stmt2->bindParam(':ss', $senhaa);
+      $stmt2->execute();
+       $user = $stmt2->fetch();
+        if($stmt2->rowCount()> 0){
+           echo "Seja bem vindo"." ". $usuario;
+        }else{
+            echo "Usuário ou senha invalidos";
+            exit();
+       }
 }
-?>
-
+?> 
